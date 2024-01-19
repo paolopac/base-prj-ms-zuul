@@ -1,0 +1,101 @@
+
+# ==============================================================
+# = ZUUL-API-GATEWAY MICRO SERVICE
+# ==============================================================
+# ==============================================================
+# = NOTE
+# ==============================================================   
+# build:
+# mvn -Dmaven.test.skip=true clean install
+
+# java -jar -Dspring.profiles.active=zone[n] -DMsUserIp=127.0.0.1 -Xmx96m -Xss512k NameApp.jar
+# example:
+# java -jar -Dspring.profiles.active=struct1 -DMsUserIp=127.0.0.1 -Xmx96m -Xss512k ZUUL-API-GATEWAY-0.1.0-SNAPSHOT.jar 
+# ==============================================================
+# = PROFILE: sruct1
+# ==============================================================
+spring:
+  application:
+    name: ZUUL-MICRO-SERVICE
+
+# ==============================================================
+# = ZUUL
+# ==============================================================
+zuul:
+  host:
+    connect-timeout-millis: 90000
+    socket-timeout-millis: 60000
+  ignoredServices: '*'
+  prefix: /api
+  stripPrefix: true
+  ribbon:
+    eager-load:
+      enabled: true
+  routes:
+    #http://localhost:8020/user/* PA: TO COMPLETE
+    user: 
+      path: /ms0/**
+      serviceId: USER-MICRO-SERVICE
+      sensitive-headers: Cookie,Set-Cookie
+
+# ==============================================================
+# = RIBBON  
+# ==============================================================
+USER-MICRO-SERVICE:
+  ribbon:
+    listOfServers: http://${MsUserIp}:8020
+    ConnectTimeout: 20000
+    ReadTimeout: 90000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 500
+    eureka:
+      enabled: false
+
+# ==============================================================
+# = Proprietà Livello Log
+# = Default ERROR, WARN e INFO 
+# = Levels: TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
+# ==============================================================   
+logging:
+  file:
+    name: 'logs/zuul-micro-service-struct1.log'
+    max-size: 10MB
+  # Livello del Log generale
+  level:
+    root: INFO 
+    # Livello di log specifico
+    # org.springframework.security: DEBUG
+    org.hibernate: INFO
+    
+# ==============================================================
+# = Actuator Properties 
+# ==============================================================
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,httptrace,shutdown,routes,filters, metrics, mappings
+  endpoint:
+    health:
+      show-details: always
+    shutdown:
+      enabled: true
+# Metodo POST con url: /actuator/refresh
+# Metodo POST con url: /actuator/bus-refresh 
+# Metodo POST con url: /actuator/shutdown 
+# Metodo GET con url:  /actuator/routes?format=details 
+# Metodo GET con url:  /actuator/filters
+# Metodo POST con url: /actuator/routes  
+
+server:
+  port: 8120
+
+# ==============================================================
+# Security JWT  
+# ===============================================================
+security:
+  url: /auth/**
+  header: Authorization
+  prefix: Bearer 
+  expiration: 86400 # 24h
+  secret: Ne1_M3zz0_d31
