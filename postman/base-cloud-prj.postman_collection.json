@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "ca0c4ad1-04d5-4486-8649-e4a76c7bb2ff",
+		"name": "base-cloud-prj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API-GATWAY",
+			"item": [
+				{
+					"name": "/api/ms0/user/create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbkBlbWFpbC5pdCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzA1NDAyNTAyLCJleHAiOjE3MDU0ODg5MDJ9.TiF2-7mpdfKlLBcF1C8-Q0Gywoyxq8-RgwqL_JXnj46C3vZQvArNcqGka-t5Zi0NA-ZLb1PZG0nBWh_zCn9oAQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"e-mail\": \"simple_user1@email.it\",\n\t\"password\": \"password!\",\n\t\"cod-ruolo\": \"SIMPLE_USER\",\n\t\"cod-utente-creazione\":\t\"POSTMAN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8120/api/ms0/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8120",
+							"path": [
+								"api",
+								"ms0",
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/ms0/auth",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"admin@email.it\",\n    \"password\": \"password!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8120/api/ms0/auth",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8120",
+							"path": [
+								"api",
+								"ms0",
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/api/ms0/actuator/**",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8120/api/ms0/actuator/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8120",
+							"path": [
+								"api",
+								"ms0",
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ACTUATOR",
+			"item": [
+				{
+					"name": "health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8755/get-runners/actuator/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8755",
+							"path": [
+								"get-runners",
+								"actuator",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actuator",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/actuator",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"actuator"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8755/get-runners/actuator/info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8755",
+							"path": [
+								"get-runners",
+								"actuator",
+								"info"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "USER-MICRO-SERVICE",
+			"item": [
+				{
+					"name": "user/create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"e-mail\": \"admwi222n@email.it\",\n\t\"password\": \"password!\",\n\t\"cod-ruolo\": \"ADMIN\",\n\t\"cod-utente-creazione\":\t\"POSTMAN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8020/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8020",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/auth",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"pa@email.it\",\n\t\"password\": \"password!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8020/auth/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8020",
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "KUBERNATES",
+			"item": [
+				{
+					"name": "API-GATWAY",
+					"item": [
+						{
+							"name": "/api/ms0/user/create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaW1wbGVfdXNlcjJAZW1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX1NJTVBMRV9VU0VSIl0sImlhdCI6MTcwNTY2MTEzNCwiZXhwIjoxNzA1NzQ3NTM0fQ.WCP57CXiQ0AgDJDMQQ6OqTPoztE1Y4PsILQUnjpH1AD6irSVwMoFUZcXRax3oQGHsuoEcECdcuRP8WhRR_CciQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"e-mail\": \"simple_user2@email.it\",\n\t\"password\": \"password!\",\n\t\"cod-ruolo\": \"SIMPLE_USER\",\n\t\"cod-utente-creazione\":\t\"POSTMAN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://35.224.6.145:8120/api/ms0/user/create",
+									"protocol": "http",
+									"host": [
+										"35",
+										"224",
+										"6",
+										"145"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms0",
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/ms0/auth",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"connection": true,
+									"accept-encoding": true,
+									"accept": true,
+									"user-agent": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n \"username\": \"simple_user2@email.it\",\n\"password\": \"password!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://35.224.6.145:8120/api/ms0/auth",
+									"protocol": "http",
+									"host": [
+										"35",
+										"224",
+										"6",
+										"145"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms0",
+										"auth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/ms0/actuator/**",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://35.224.6.145:8120/actuator",
+									"protocol": "http",
+									"host": [
+										"35",
+										"224",
+										"6",
+										"145"
+									],
+									"port": "8120",
+									"path": [
+										"actuator"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "USER-MICRO-SERVICE",
+					"item": [
+						{
+							"name": "user/create",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"connection": true,
+									"accept-encoding": true,
+									"accept": true,
+									"user-agent": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"e-mail\": \"admwi222n@email.it\",\n\t\"password\": \"password!\",\n\t\"cod-ruolo\": \"ADMIN\",\n\t\"cod-utente-creazione\":\t\"POSTMAN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.122.58.40:8020/user/create",
+									"protocol": "http",
+									"host": [
+										"34",
+										"122",
+										"58",
+										"40"
+									],
+									"port": "8020",
+									"path": [
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "user/auth",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"connection": true,
+									"accept-encoding": true,
+									"accept": true,
+									"user-agent": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"username\": \"pa@email.it\",\n\t\"password\": \"password!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://34.122.58.40:8020/auth/",
+									"protocol": "http",
+									"host": [
+										"34",
+										"122",
+										"58",
+										"40"
+									],
+									"port": "8020",
+									"path": [
+										"auth",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

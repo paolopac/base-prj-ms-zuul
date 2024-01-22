@@ -93,9 +93,14 @@ server:
 # ==============================================================
 # Security JWT  
 # ===============================================================
+# Note: tale sezione è necessario coincida con la sezione security presente all'interno dell'app 
+# ms-user > application-struct1.yml
 security:
   url: /auth/**
   header: Authorization
   prefix: Bearer 
   expiration: 86400 # 24h
   secret: Ne1_M3zz0_d31
+  # ==============================================================
+# Security JWT  
+# ===============================================================
