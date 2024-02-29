@@ -10,7 +10,7 @@
 
 # java -jar -Dspring.profiles.active=zone[n] -DMsUserIp=127.0.0.1 -Xmx96m -Xss512k NameApp.jar
 # example:
-# java -jar -Dspring.profiles.active=struct1 -DMsUserIp=127.0.0.1 -Xmx96m -Xss512k ZUUL-API-GATEWAY-0.1.0-SNAPSHOT.jar 
+# java -jar -Dspring.profiles.active=struct1 -DMsUserIp=127.0.0.1 -DMsAssociationsIp=127.0.0.1 -DMsRunnersIp=127.0.0.1 -DMsRunningsIp=127.0.0.1 -Xmx96m -Xss512k ZUUL-API-GATEWAY-0.1.0-SNAPSHOT.jar 
 # ==============================================================
 # = PROFILE: sruct1
 # ==============================================================
@@ -32,10 +32,22 @@ zuul:
     eager-load:
       enabled: true
   routes:
-    #http://localhost:8020/user/* PA: TO COMPLETE
+    # Es. http://localhost:8120/api/ms0/user/create
     user: 
       path: /ms0/**
       serviceId: USER-MICRO-SERVICE
+      sensitive-headers: Cookie,Set-Cookie
+    associations: 
+      path: /ms1/**
+      serviceId: ASSOCIATIONS-MICRO-SERVICE
+      sensitive-headers: Cookie,Set-Cookie
+    runners: 
+      path: /ms2/**
+      serviceId: RUNNERS-MICRO-SERVICE
+      sensitive-headers: Cookie,Set-Cookie
+    runnings: 
+      path: /ms3/**
+      serviceId: RUNNINGS-MICRO-SERVICE
       sensitive-headers: Cookie,Set-Cookie
 
 # ==============================================================
@@ -50,7 +62,37 @@ USER-MICRO-SERVICE:
     MaxConnectionsPerHost: 500
     eureka:
       enabled: false
+      
+ASSOCIATIONS-MICRO-SERVICE:
+  ribbon:
+    listOfServers: http://${MsAssociationsIp}:5093
+    ConnectTimeout: 20000
+    ReadTimeout: 90000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 500
+    eureka:
+      enabled: false
 
+RUNNERS-MICRO-SERVICE:
+  ribbon:
+    listOfServers: http://${MsRunnersIp}:5083
+    ConnectTimeout: 20000
+    ReadTimeout: 90000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 500
+    eureka:
+      enabled: false
+
+RUNNINGS-MICRO-SERVICE:
+  ribbon:
+    listOfServers: http://${MsRunningsIp}:5073
+    ConnectTimeout: 20000
+    ReadTimeout: 90000
+    MaxTotalHttpConnections: 500
+    MaxConnectionsPerHost: 500
+    eureka:
+      enabled: false
+      
 # ==============================================================
 # = Proprietà Livello Log
 # = Default ERROR, WARN e INFO 

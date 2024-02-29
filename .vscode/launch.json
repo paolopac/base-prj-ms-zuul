@@ -12,7 +12,10 @@
       "projectName": "ZUUL-MICRO-SERVICE",
       "vmArgs": [
         "-Dspring.profiles.active=struct1",
-        "-DMsUserIp=127.0.0.1"
+        "-DMsUserIp=127.0.0.1",
+        "-DMsAssociationsIp=127.0.0.1",
+        "-DMsRunnersIp=127.0.0.1",
+        "-DMsRunningsIp=127.0.0.1"
       ]
     }
   ]
