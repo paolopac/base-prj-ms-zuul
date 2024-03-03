@@ -9,7 +9,7 @@
       "name": "Launch ZUUL",
       "request": "launch",
       "mainClass": "com.faraday.webapp.Application",
-      "projectName": "ZUUL-MICRO-SERVICE",
+      "projectName": "MICRO-SERVICE-ZUUL",
       "vmArgs": [
         "-Dspring.profiles.active=struct1",
         "-DMsUserIp=127.0.0.1",

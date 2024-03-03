@@ -5,9 +5,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.faray.webapp</groupId>
-	<artifactId>ZUUL-MICRO-SERVICE</artifactId>
+	<artifactId>MICRO-SERVICE-ZUUL</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
-	<name>ZUUL-MICRO-SERVICE</name>
+	<name>MICRO-SERVICE-ZUUL</name>
 	<description>API Gateway Server</description>
 
 

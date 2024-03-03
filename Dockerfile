@@ -15,18 +15,18 @@ WORKDIR /webapi
 
 VOLUME ["/logs"]
 
-COPY /target/ZUUL-MICRO-SERVICE-0.2.0-SNAPSHOT.jar ms-zuul.jar
+COPY /target/MICRO-SERVICE-ZUUL-0.2.0-SNAPSHOT.jar th-prj-ms-zuul.jar
 
-ENTRYPOINT exec java $JAVA_OPTS $Xmx -XX:+UseSerialGC $Xss -jar ms-zuul.jar
+ENTRYPOINT exec java $JAVA_OPTS $Xmx -XX:+UseSerialGC $Xss -jar th-prj-ms-zuul.jar
 
 #Generazione Immagine:
-# docker build -t ms-zuul .
+# docker build -t th-prj-ms-zuul .
 
 # Upload in dockerhub:
 
 # docker login 
 
-# docker tag 8fd3dbe5580effb5d34c9b79691e32a3e532b848b5ed4c4a80cda42e5f09f14c paoloacqua/ms-zuul
+# docker tag 6d3f5c5fc93f41a1397ef698e8221111841a76e381c312d19c1c1da903a96439 paoloacqua/th-prj-ms-zuul
 
-# docker push paoloacqua/ms-zuul
+# docker push paoloacqua/th-prj-ms-zuul
 

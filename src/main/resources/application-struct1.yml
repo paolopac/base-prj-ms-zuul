@@ -16,7 +16,7 @@
 # ==============================================================
 spring:
   application:
-    name: ZUUL-MICRO-SERVICE
+    name: MICRO-SERVICE-ZUUL
 
 # ==============================================================
 # = ZUUL
@@ -100,7 +100,7 @@ RUNNINGS-MICRO-SERVICE:
 # ==============================================================   
 logging:
   file:
-    name: 'logs/zuul-micro-service-struct1.log'
+    name: 'logs/micro-service-zuul-struct1.log'
     max-size: 10MB
   # Livello del Log generale
   level:
