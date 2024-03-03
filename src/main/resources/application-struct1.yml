@@ -6,7 +6,7 @@
 # = NOTE
 # ==============================================================   
 # build:
-# mvn -Dmaven.test.skip=true clean install
+# mvn -D maven.test.skip=true clean install
 
 # java -jar -Dspring.profiles.active=zone[n] -DMsUserIp=127.0.0.1 -Xmx96m -Xss512k NameApp.jar
 # example:

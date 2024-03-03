@@ -1,0 +1,2037 @@
+{
+	"info": {
+		"_postman_id": "97abdb68-02cd-4396-bdcc-6fbb95011516",
+		"name": "th-prj",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29920332"
+	},
+	"item": [
+		{
+			"name": "API-GATWAY",
+			"item": [
+				{
+					"name": "USER",
+					"item": [
+						{
+							"name": "/api/ms0/user/create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW9sb2FxdWFAaG90bWFpbC5pdCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzA5MjE2NzEwLCJleHAiOjE3MDkzMDMxMTB9.U-MD0XRdWonNTyJI_RsEbAqumwRzeix2PKZsrBsKgKkaiZb60SiCp34FQXXMMZBPPtxos03_21kezeVBT_vKGw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"e-mail\": \"pl.acquaviva@gmail.com\",\n\t\"password\": \"20240229!\",\n\t\"cod-ruolo\": \"SIMPLE_USER\",\n\t\"cod-utente-creazione\":\t\"POSTMAN\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms0/user/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms0",
+										"user",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/ms0/auth",
+							"protocolProfileBehavior": {
+								"disabledSystemHeaders": {
+									"connection": true,
+									"accept-encoding": true,
+									"accept": true,
+									"user-agent": true
+								}
+							},
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"username\":\"pl.acquaviva@gmail.com\",\n\t\"password\": \"20240229!\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms0/auth",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms0",
+										"auth"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "/api/ms0/actuator/**",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms0/actuator/info",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms0",
+										"actuator",
+										"info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "ASSOCIATION",
+					"item": [
+						{
+							"name": "verifyAssociationsById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTc0MzgsImV4cCI6MTcwOTMwMzgzOH0._qwV1famKVrVauBR7lZR2953yerq7u8dAFWVe7ChGceDozffc40SM6QaDw7Exey4dCCGVsJprhr39dRuY69eNQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/verify/code/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"verify",
+										"code",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "selByAssociationsId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW9sb2FxdWFAaG90bWFpbC5pdCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzA5MjE2MDA0LCJleHAiOjE3MDkzMDI0MDR9.hJ5hvUrTYSz2t4DIP5EXSwcAHo0feExGe4LiHKmv9MCP7PgvTMRM4H1HdKuAUtAKFBEfC2-UJNXqbNBBeQyykw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/search/code/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"search",
+										"code",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sellByFIDALId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW9sb2FxdWFAaG90bWFpbC5pdCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzA5MjE2MDA0LCJleHAiOjE3MDkzMDI0MDR9.hJ5hvUrTYSz2t4DIP5EXSwcAHo0feExGe4LiHKmv9MCP7PgvTMRM4H1HdKuAUtAKFBEfC2-UJNXqbNBBeQyykw",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/search/fidalid/BA703",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"search",
+										"fidalid",
+										"BA703"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaW1wbGVfdXNlcjFAZW1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX1NJTVBMRV9VU0VSIl0sImlhdCI6MTcwOTIwMzEyMCwiZXhwIjoxNzA5Mjg5NTIwfQ.dvyZg1n26fl1aJRiTflUeBtrY_vlPOYCRLyhFlxi3hMFViAa8G2Q3pW0cyAx63LVKWBGgEPUS6K9hFuipzWigQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"nome\": \"ASD 15 RUNNERS\",\n  \"fidalId\": \"BA015\",\n  \"cf\":\"\",\n  \"piva\":\"07004700725\",\n  \"citta\":\"altamura\",\n  \"indirizzo\":\"Via S. Quasimodo 5\",\n  \"cap\":\"70022\",\n  \"provincia\":\"bari\",\n  \"telefono\":\"3333333333\",\n  \"email\": \"asdhappyrunnewrs2@gmail.com\" \n  }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "selAll",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW9sb2FjcXVhQGhvdG1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX0FETUlOIl0sImlhdCI6MTcwOTIyNzkyNywiZXhwIjoxNzA5MzE0MzI3fQ.iQWocRf86wAUJ4tvB6SFyswQh_HqkWPDZfR8DaUMBHqzIJylFEeEcmlWPNoG9oPfcdzhNB01wjPg-uAslm8qkA",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/search/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"search",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "updateAssociations",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaW1wbGVfdXNlcjFAZW1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX1NJTVBMRV9VU0VSIl0sImlhdCI6MTcwOTIwMzEyMCwiZXhwIjoxNzA5Mjg5NTIwfQ.dvyZg1n26fl1aJRiTflUeBtrY_vlPOYCRLyhFlxi3hMFViAa8G2Q3pW0cyAx63LVKWBGgEPUS6K9hFuipzWigQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "   {\n        \"id\": 210,\n        \"nome\": \"ASD 16 RUNNERS\",\n        \"fidalId\": \"BA015\",\n        \"citta\": \"altamura\",\n        \"indirizzo\": \"Via S. Quasimodo 5\",\n        \"provincia\": \"bari\",\n        \"telefono\": \"3333333333\",\n        \"cap\": \"70022\",\n        \"email\": \"asdhappyrunnewrs2@gmail.com\",\n        \"piva\": \"07004700725\",\n        \"cf\": \"\"\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAssociations",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaW1wbGVfdXNlcjFAZW1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX1NJTVBMRV9VU0VSIl0sImlhdCI6MTcwOTIwMzEyMCwiZXhwIjoxNzA5Mjg5NTIwfQ.dvyZg1n26fl1aJRiTflUeBtrY_vlPOYCRLyhFlxi3hMFViAa8G2Q3pW0cyAx63LVKWBGgEPUS6K9hFuipzWigQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/associations/delete/208",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"associations",
+										"delete",
+										"208"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "actuator",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaW1wbGVfdXNlcjFAZW1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX1NJTVBMRV9VU0VSIl0sImlhdCI6MTcwOTIwMzEyMCwiZXhwIjoxNzA5Mjg5NTIwfQ.dvyZg1n26fl1aJRiTflUeBtrY_vlPOYCRLyhFlxi3hMFViAa8G2Q3pW0cyAx63LVKWBGgEPUS6K9hFuipzWigQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms1/actuator/info",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms1",
+										"actuator",
+										"info"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MICRO-SERVICE-RUNNERS",
+					"item": [
+						{
+							"name": "selAllByAssosiactionId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTc0MzgsImV4cCI6MTcwOTMwMzgzOH0._qwV1famKVrVauBR7lZR2953yerq7u8dAFWVe7ChGceDozffc40SM6QaDw7Exey4dCCGVsJprhr39dRuY69eNQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/search/association/1/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"search",
+										"association",
+										"1",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_0_m",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTc0MzgsImV4cCI6MTcwOTMwMzgzOH0._qwV1famKVrVauBR7lZR2953yerq7u8dAFWVe7ChGceDozffc40SM6QaDw7Exey4dCCGVsJprhr39dRuY69eNQ",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Michael\",\n    \"cognome\": \"Faraday\",\n    \"gender\":\"m\",\n    \"email\":\"Michael@mail.com\", \n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_1_f",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Margherita\",\n    \"cognome\": \"Hack\",\n    \"gender\":\"f\",\n    \"email\":\"MargheritaHack@mail.com\",\n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5083/runners/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5083",
+									"path": [
+										"runners",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_2_f",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Helen\",\n    \"cognome\": \"Quinn\",\n    \"gender\":\"f\",\n    \"email\":\"HelenQuinn@mail.com\",\n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":443\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5083/runners/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5083",
+									"path": [
+										"runners",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create_3_f",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"nome\": \"Rita Levi\",\n    \"cognome\": \"Montalcini\",\n    \"gender\":\"f\",\n    \"email\":\"montalcini@mail.com\",\n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":443\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5083/runners/create",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5083",
+									"path": [
+										"runners",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delAllByAssociationId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW9sb2FxdWFAaG90bWFpbC5pdCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzA5MjE5NTEzLCJleHAiOjE3MDkzMDU5MTN9.D6it95x2ARjg7Fnkt1JNHsVELPNmYVj7aDdO8SwfphcMzBtBBN2sdj1ECjnihP59dgPdLyh8nkR4WGG7Q8ZuQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/delete/association/1/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"delete",
+										"association",
+										"1",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "selByEmailAndAssociationId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTk1NjEsImV4cCI6MTcwOTMwNTk2MX0.BEGxiqinyC1J7esDBmSjWQrSvgu_Kb63hBDRRhpVrqK3WNFeJ9_bka5pdf6U-jm4bkwPv0i8XpqyEG2UjhO5Cg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/search/association/1/email/Michael@mail.com",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"search",
+										"association",
+										"1",
+										"email",
+										"Michael@mail.com"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwYW9sb2FxdWFAaG90bWFpbC5pdCIsImF1dGhvcml0aWVzIjpbIlJPTEVfQURNSU4iXSwiaWF0IjoxNzA5MjE5NTEzLCJleHAiOjE3MDkzMDU5MTN9.D6it95x2ARjg7Fnkt1JNHsVELPNmYVj7aDdO8SwfphcMzBtBBN2sdj1ECjnihP59dgPdLyh8nkR4WGG7Q8ZuQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/delete/20",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"delete",
+										"20"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "update",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTk1NjEsImV4cCI6MTcwOTMwNTk2MX0.BEGxiqinyC1J7esDBmSjWQrSvgu_Kb63hBDRRhpVrqK3WNFeJ9_bka5pdf6U-jm4bkwPv0i8XpqyEG2UjhO5Cg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "    {\n        \"id\": 22,\n        \"nome\": \"Michael\",\n        \"cognome\": \"Faraday\",\n        \"email\": \"Michael@mail.com\",\n        \"gender\": \"m\",\n        \"associationId\": 1,\n        \"accettazionePrivacyPolicy\": true,\n        \"accettazioneCondizioni\": true\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/update",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"update"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getSubInfoById",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUsxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTk1NjEsImV4cCI6MTcwOTMwNTk2MX0.BEGxiqinyC1J7esDBmSjWQrSvgu_Kb63hBDRRhpVrqK3WNFeJ9_bka5pdf6U-jm4bkwPv0i8XpqyEG2UjhO5Cg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/search/22/sub-info",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"search",
+										"22",
+										"sub-info"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "selByAssociationIdAndGender",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMTk1NjEsImV4cCI6MTcwOTMwNTk2MX0.BEGxiqinyC1J7esDBmSjWQrSvgu_Kb63hBDRRhpVrqK3WNFeJ9_bka5pdf6U-jm4bkwPv0i8XpqyEG2UjhO5Cg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms2/runners/search/association/1/gender/m",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms2",
+										"runners",
+										"search",
+										"association",
+										"1",
+										"gender",
+										"m"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MICRO-SERVICE-RUNNINGS",
+					"item": [
+						{
+							"name": "create10k",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMjk2MjMsImV4cCI6MTcwOTMxNjAyM30.xe1gZ4sTaZKl_SdVBV3r1TJIcrIrM0K4a-iy8SFDlDV3txYhSgkjM5rCvEWWH3vBGPZULmKwjYPgeKr7FLyNQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/paolo/Downloads/20240227_075259.gpx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms3/runnings/create/association/1/runnerId/22?file",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms3",
+										"runnings",
+										"create",
+										"association",
+										"1",
+										"runnerId",
+										"22"
+									],
+									"query": [
+										{
+											"key": "file",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "create10k_2",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMjk2MjMsImV4cCI6MTcwOTMxNjAyM30.xe1gZ4sTaZKl_SdVBV3r1TJIcrIrM0K4a-iy8SFDlDV3txYhSgkjM5rCvEWWH3vBGPZULmKwjYPgeKr7FLyNQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/paolo/Desktop/5km-9m.gpx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms3/runnings/create/association/1/runnerId/23?file",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms3",
+										"runnings",
+										"create",
+										"association",
+										"1",
+										"runnerId",
+										"23"
+									],
+									"query": [
+										{
+											"key": "file",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "getAssociationsRankings5K",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMjk2MjMsImV4cCI6MTcwOTMxNjAyM30.xe1gZ4sTaZKl_SdVBV3r1TJIcrIrM0K4a-iy8SFDlDV3txYhSgkjM5rCvEWWH3vBGPZULmKwjYPgeKr7FLyNQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8120/api/ms3/runnings/search/association/1/type/5k/gender/m/startDate/2018-06-12T05:27:53Z/finishDate/2025-08-01T06:14:25Z/startDateUpload/2008-01-01T00:00:01Z/finishDateUpload/2038-01-01T00:00:01Z",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms3",
+										"runnings",
+										"search",
+										"association",
+										"1",
+										"type",
+										"5k",
+										"gender",
+										"m",
+										"startDate",
+										"2018-06-12T05:27:53Z",
+										"finishDate",
+										"2025-08-01T06:14:25Z",
+										"startDateUpload",
+										"2008-01-01T00:00:01Z",
+										"finishDateUpload",
+										"2038-01-01T00:00:01Z"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "deleteAllByAssociationsId",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMjk2MjMsImV4cCI6MTcwOTMxNjAyM30.xe1gZ4sTaZKl_SdVBV3r1TJIcrIrM0K4a-iy8SFDlDV3txYhSgkjM5rCvEWWH3vBGPZULmKwjYPgeKr7FLyNQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/paoloacqua/Documents/workspace/tarahumara/runnings-web-service/src/test/java/com/faraday/webapp/GpxExtractorTests/testFiles/1/1/M_83min_9sec.gpx"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms3/runnings/delete/association/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms3",
+										"runnings",
+										"delete",
+										"association",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "report",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMjk2MjMsImV4cCI6MTcwOTMxNjAyM30.xe1gZ4sTaZKl_SdVBV3r1TJIcrIrM0K4a-iy8SFDlDV3txYhSgkjM5rCvEWWH3vBGPZULmKwjYPgeKr7FLyNQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/paolo/Downloads/20240121_110331.gpx"
+										},
+										{
+											"key": "associationId",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "runnerId",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms3/runnings/report/association/1/runner/22/startDate/2014-01-01T00:00:01Z/finishDate/3024-01-01T00:00:01Z/startDateUpload/2014-01-01T00:00:01Z/finishDateUpload/3024-01-01T00:00:01Z",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms3",
+										"runnings",
+										"report",
+										"association",
+										"1",
+										"runner",
+										"22",
+										"startDate",
+										"2014-01-01T00:00:01Z",
+										"finishDate",
+										"3024-01-01T00:00:01Z",
+										"startDateUpload",
+										"2014-01-01T00:00:01Z",
+										"finishDateUpload",
+										"3024-01-01T00:00:01Z"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "sumDistance",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJwbC5hY3F1YXZpdmFAZ21haWwuY29tIiwiYXV0aG9yaXRpZXMiOlsiUk9MRV9TSU1QTEVfVVNFUiJdLCJpYXQiOjE3MDkyMjk2MjMsImV4cCI6MTcwOTMxNjAyM30.xe1gZ4sTaZKl_SdVBV3r1TJIcrIrM0K4a-iy8SFDlDV3txYhSgkjM5rCvEWWH3vBGPZULmKwjYPgeKr7FLyNQg",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/C:/Users/paolo/Desktop/5km-9m.gpx"
+										},
+										{
+											"key": "associationId",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										},
+										{
+											"key": "runnerId",
+											"value": "1",
+											"type": "text",
+											"disabled": true
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8120/api/ms3/runnings/ranking/sumDistance/association/1/startDate/2014-01-01T00:00:01Z/finishDate/3024-01-01T00:00:01Z/startDateUpload/2014-01-01T00:00:01Z/finishDateUpload/3024-01-01T00:00:01Z",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8120",
+									"path": [
+										"api",
+										"ms3",
+										"runnings",
+										"ranking",
+										"sumDistance",
+										"association",
+										"1",
+										"startDate",
+										"2014-01-01T00:00:01Z",
+										"finishDate",
+										"3024-01-01T00:00:01Z",
+										"startDateUpload",
+										"2014-01-01T00:00:01Z",
+										"finishDateUpload",
+										"3024-01-01T00:00:01Z"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "MICRO-SERVICE-USER",
+			"item": [
+				{
+					"name": "user/create",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"e-mail\": \"admin@email.it\",\n\t\"password\": \"password!\",\n\t\"cod-ruolo\": \"ADMIN\",\n\t\"cod-utente-creazione\":\t\"POSTMAN\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8020/user/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8020",
+							"path": [
+								"user",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user/auth",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"connection": true,
+							"accept-encoding": true,
+							"accept": true,
+							"user-agent": true
+						}
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\": \"admin@email.it\",\n\t\"password\": \"password!\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8020/auth/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8020",
+							"path": [
+								"auth",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MICRO-SERVICE-ASSOCIATIONS",
+			"item": [
+				{
+					"name": "verifyAssociationsById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/associations/verify/code/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"verify",
+								"code",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selByAssociationsId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/associations/search/code/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"search",
+								"code",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sellByFIDALId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJzaW1wbGVfdXNlcjFAZW1haWwuaXQiLCJhdXRob3JpdGllcyI6WyJST0xFX1NJTVBMRV9VU0VSIl0sImlhdCI6MTcwOTIwMjA1NCwiZXhwIjoxNzA5Mjg4NDU0fQ.nG7FMk2e4J2px0MTu0wMKVmfoTjS0QBm6luqSdPox8rZfVUdrR66C3wvkocoYThN_4dWhx6Hycg6SPsGFU0IfA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/associations/search/fidalid/BA703",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"search",
+								"fidalid",
+								"BA703"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nome\": \"ASD RUNNERS\",\n  \"fidalId\": \"BA014\",\n  \"cf\":\"\",\n  \"piva\":\"07004700725\",\n  \"citta\":\"altamura\",\n  \"indirizzo\":\"Via S. Quasimodo 5\",\n  \"cap\":\"70022\",\n  \"provincia\":\"bari\",\n  \"telefono\":\"3333333333\",\n  \"email\": \"asdhappyrunnewrs2@gmail.com\" \n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5093/associations/create/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/associations/search/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"search",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateAssociations",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 208,\n        \"nome\": \"ASD RUNNERS +\",\n        \"fidalId\": \"BA014\",\n        \"citta\": \"altamura\",\n        \"indirizzo\": \"Via S. Quasimodo 5\",\n        \"provincia\": \"bari\",\n        \"telefono\": \"3333333333\",\n        \"piva\": \"07004700725\",\n        \"cap\": \"70022\",\n        \"email\": \"asdhappyrunnewrs2@gmail.com\",\n        \"cf\": \"\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5093/associations/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAssociations",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/associations/delete/208",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"associations",
+								"delete",
+								"208"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5093/check/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5093",
+							"path": [
+								"check",
+								"health"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MICRO-SERVICE-RUNNERS",
+			"item": [
+				{
+					"name": "selAllByAssosiactionId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5083/runners/search/association/1/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"search",
+								"association",
+								"1",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_0_m",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Michael\",\n    \"cognome\": \"Faraday\",\n    \"gender\":\"m\",\n    \"email\":\"Michael@mail.com\", \n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5083/runners/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_1_f",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Margherita\",\n    \"cognome\": \"Hack\",\n    \"gender\":\"f\",\n    \"email\":\"MargheritaHack@mail.com\",\n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5083/runners/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_2_f",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Helen\",\n    \"cognome\": \"Quinn\",\n    \"gender\":\"f\",\n    \"email\":\"HelenQuinn@mail.com\",\n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":443\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5083/runners/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create_3_f",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nome\": \"Rita Levi\",\n    \"cognome\": \"Montalcini\",\n    \"gender\":\"f\",\n    \"email\":\"montalcini@mail.com\",\n    \"accettazionePrivacyPolicy\": false,\n    \"accettazioneCondizioni\":  false,\n    \"associationId\":443\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5083/runners/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delAllByAssociationId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5083/runners/delete/association/366/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"delete",
+								"association",
+								"366",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selByEmailAndAssociationId",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5083/runners/search/association/443/email/montalcini@mail.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"search",
+								"association",
+								"443",
+								"email",
+								"montalcini@mail.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5083/runners/delete/805",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"delete",
+								"805"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": 902,\n        \"nome\": \"Paolo\",\n        \"cognome\": \"Acquaviva\",\n        \"email\": \"paoloacqua@hotmail.it\",\n        \"gender\": \"\",\n        \"associationId\": 444,\n        \"accettazionePrivacyPolicy\": false,\n        \"accettazioneCondizioni\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5083/runners/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getSubInfoById",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5083/runners/search/854/sub-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"search",
+								"854",
+								"sub-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "selByAssociationIdAndGender",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5083/runners/search/association/443/gender/f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5083",
+							"path": [
+								"runners",
+								"search",
+								"association",
+								"443",
+								"gender",
+								"f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MICRO-SERVICE-RUNNINGS",
+			"item": [
+				{
+					"name": "create10k",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/paolo/Desktop/MAX_3h_1min_8sec.gpx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5073/runnings/create/association/1/runnerId/22?file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"create",
+								"association",
+								"1",
+								"runnerId",
+								"22"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create10k_2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/paolo/Downloads/20240227_075259.gpx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5073/runnings/create/association/1/runnerId/23?file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"create",
+								"association",
+								"1",
+								"runnerId",
+								"23"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create5k",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/paoloacqua/Documents/workspace/tarahumara/runnings-web-service/src/test/java/com/faraday/webapp/GpxExtractorTests/testFiles/1/1/5km-9m.gpx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5073/runnings/create/association/498/runnerId/1004?file",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"create",
+								"association",
+								"498",
+								"runnerId",
+								"1004"
+							],
+							"query": [
+								{
+									"key": "file",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getAssociationsRankings5K",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:5073/runnings/search/association/1/type/5k/gender/f/startDate/2018-06-12T05:27:53Z/finishDate/2025-08-01T06:14:25Z/startDateUpload/2008-01-01T00:00:01Z/finishDateUpload/2038-01-01T00:00:01Z",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"search",
+								"association",
+								"1",
+								"type",
+								"5k",
+								"gender",
+								"f",
+								"startDate",
+								"2018-06-12T05:27:53Z",
+								"finishDate",
+								"2025-08-01T06:14:25Z",
+								"startDateUpload",
+								"2008-01-01T00:00:01Z",
+								"finishDateUpload",
+								"2038-01-01T00:00:01Z"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createHM",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/paoloacqua/Documents/workspace/tarahumara/runnings-web-service/src/test/java/com/faraday/webapp/GpxExtractorTests/testFiles/1/1/HMkm_33m_9sec.gpx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5073/runnings/create/association/388/runnerId/723",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"create",
+								"association",
+								"388",
+								"runnerId",
+								"723"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteAllByAssociationsId",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/Users/paoloacqua/Documents/workspace/tarahumara/runnings-web-service/src/test/java/com/faraday/webapp/GpxExtractorTests/testFiles/1/1/M_83min_9sec.gpx"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:5073/runnings/delete/association/388",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"delete",
+								"association",
+								"388"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "report",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/paolo/Downloads/20240121_110331.gpx"
+								},
+								{
+									"key": "associationId",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "runnerId",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:5073/runnings/report/association/1/runner/22/startDate/2014-01-01T00:00:01Z/finishDate/3024-01-01T00:00:01Z/startDateUpload/2014-01-01T00:00:01Z/finishDateUpload/3024-01-01T00:00:01Z",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"report",
+								"association",
+								"1",
+								"runner",
+								"22",
+								"startDate",
+								"2014-01-01T00:00:01Z",
+								"finishDate",
+								"3024-01-01T00:00:01Z",
+								"startDateUpload",
+								"2014-01-01T00:00:01Z",
+								"finishDateUpload",
+								"3024-01-01T00:00:01Z"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "sumDistance",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file",
+									"type": "file",
+									"src": "/C:/Users/paolo/Desktop/5km-9m.gpx"
+								},
+								{
+									"key": "associationId",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								},
+								{
+									"key": "runnerId",
+									"value": "1",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "127.0.0.1:5073/runnings/ranking/sumDistance/association/1/startDate/2014-01-01T00:00:01Z/finishDate/3024-01-01T00:00:01Z/startDateUpload/2014-01-01T00:00:01Z/finishDateUpload/3024-01-01T00:00:01Z",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5073",
+							"path": [
+								"runnings",
+								"ranking",
+								"sumDistance",
+								"association",
+								"1",
+								"startDate",
+								"2014-01-01T00:00:01Z",
+								"finishDate",
+								"3024-01-01T00:00:01Z",
+								"startDateUpload",
+								"2014-01-01T00:00:01Z",
+								"finishDateUpload",
+								"3024-01-01T00:00:01Z"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

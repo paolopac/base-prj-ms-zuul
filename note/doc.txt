@@ -1,0 +1,13 @@
+utenze storicizzata:
+
+"e-mail": "paoloacqua@hotmail.it",
+"password": "20240229!",
+"cod-ruolo": "ADMIN",
+"cod-utente-creazione":	"POSTMAN"
+$2a$10$8UGZhh5w65djJvKgLhwPpOls27KnfPl1clCjc7uige7AOU0Xx1my2
+
+"e-mail": "pl.acquaviva@gmail.com",
+"password": "20240229!",
+"cod-ruolo": "SIMPLE_USER",
+"cod-utente-creazione":	"POSTMAN"
+$2a$10$oFsT/yS20O1kM3PkXnvtAugfZ2OuOxcrACwMi5Dn5HmTjDOreKs5a

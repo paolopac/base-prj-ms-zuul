@@ -6,7 +6,7 @@
 
 	<groupId>com.faray.webapp</groupId>
 	<artifactId>ZUUL-MICRO-SERVICE</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<name>ZUUL-MICRO-SERVICE</name>
 	<description>API Gateway Server</description>
 
@@ -63,6 +63,7 @@
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
+	  <version>1.18.30</version>
       <optional>true</optional>
     </dependency>
 
