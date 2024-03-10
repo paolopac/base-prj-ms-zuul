@@ -26,7 +26,7 @@ ENTRYPOINT exec java $JAVA_OPTS $Xmx -XX:+UseSerialGC $Xss -jar th-prj-ms-zuul.j
 
 # docker login 
 
-# docker tag 6d3f5c5fc93f41a1397ef698e8221111841a76e381c312d19c1c1da903a96439 paoloacqua/th-prj-ms-zuul
+# docker tag b65689588a440bf70faa90ad69001e6d86eb88abd07a214be5146f07b922f6bb paoloacqua/th-prj-ms-zuul:0.2.0
 
-# docker push paoloacqua/th-prj-ms-zuul
+# docker push paoloacqua/th-prj-ms-zuul:0.2.0
 
